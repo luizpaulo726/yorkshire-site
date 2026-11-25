@@ -1,0 +1,27 @@
+{% from '_macros.html.twig' import imagem %}
+<section class="secao secao--alternada" id="aparencia">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Aparência</p>
+        <h2>Pequeno no tamanho, longo na pelagem</h2>
+    </div>
+
+    <div class="duas-colunas">
+        <div class="texto-corrido">
+            <p>O Yorkshire é um dos menores cães do mundo. O padrão da raça pede até <strong>3,2 kg</strong>, com corpo compacto, cabeça pequena e orelhas em "V" sempre em pé.</p>
+            <p>A marca da raça é o pelo: <strong>fino, liso e sedoso</strong>, com textura parecida com a do cabelo humano. Ele cresce sem parar e cai pouco, por isso muitos donos preferem a tosa curta no dia a dia e deixam a pelagem longa para as exposições.</p>
+            <h3>A cor muda com a idade</h3>
+            <p>Os filhotes nascem <strong>pretos e castanhos</strong>. Com o tempo, o preto do corpo clareia até o <strong>azul-aço</strong>, enquanto cabeça, peito e patas ficam num castanho dourado. A cor definitiva pode levar até três anos para aparecer.</p>
+        </div>
+
+        <div class="comparacao">
+            <figure>
+                {{ imagem('filhote', 'Filhote de Yorkshire Terrier preto e castanho deitado sobre um tapete vermelho') }}
+                <figcaption><span class="amostra amostra--preto" aria-hidden="true"></span>Filhote: preto e castanho</figcaption>
+            </figure>
+            <figure>
+                {{ imagem('exposicao-westminster', 'Yorkshire Terrier adulto com pelagem longa azul-aço e dourada, preparado para exposição') }}
+                <figcaption><span class="amostra amostra--aco" aria-hidden="true"></span>Adulto: azul-aço e dourado</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>

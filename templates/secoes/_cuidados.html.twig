@@ -1,0 +1,25 @@
+{% from '_macros.html.twig' import imagem %}
+<section class="secao secao--alternada" id="cuidados">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Cuidados</p>
+        <h2>O que um Yorkshire precisa</h2>
+    </div>
+
+    <div class="duas-colunas duas-colunas--foto-primeiro">
+        <figure class="foto-vertical">
+            {{ imagem('filhote-passeio', 'Filhote de Yorkshire Terrier passeando com peitoral e guia em um jardim') }}
+            <figcaption>Peitoral em vez de coleira: menos pressão no pescoço e na traqueia.</figcaption>
+        </figure>
+
+        <dl class="cuidados">
+            {% for cuidado in cuidados %}
+                <div>
+                    <dt>{{ cuidado.titulo }}</dt>
+                    <dd>{{ cuidado.texto }}</dd>
+                </div>
+            {% endfor %}
+        </dl>
+    </div>
+
+    <p class="aviso">Este site é informativo e não substitui a orientação de um médico-veterinário.</p>
+</section>

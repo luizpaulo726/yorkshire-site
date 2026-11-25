@@ -1,0 +1,25 @@
+{% from '_macros.html.twig' import imagem %}
+<section class="secao" id="origem">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Origem</p>
+        <h2>Das tecelagens de Yorkshire para o mundo</h2>
+        <p class="secao__lead">O Yorkshire Terrier nasceu da Revolução Industrial. Ele é resultado de cruzamentos feitos por trabalhadores, não por aristocratas, e foi criado para um trabalho bem concreto: caçar ratos.</p>
+    </div>
+
+    <div class="origem">
+        <ol class="linha-tempo">
+            {% for etapa in linha_tempo %}
+                <li>
+                    <span class="linha-tempo__ano">{{ etapa.quando }}</span>
+                    <h3>{{ etapa.titulo }}</h3>
+                    <p>{{ etapa.texto }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <figure class="origem__gravura">
+            {{ imagem('huddersfield-ben', 'Gravura em preto e branco de dois Yorkshire Terriers de pelagem longa sobre uma mesa') }}
+            <figcaption>Huddersfield Ben e a cadela Katie, em gravura publicada por John Henry Walsh em 1878.</figcaption>
+        </figure>
+    </div>
+</section>

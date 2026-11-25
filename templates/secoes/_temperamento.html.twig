@@ -1,0 +1,16 @@
+<section class="secao" id="temperamento">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Temperamento</p>
+        <h2>Um cão grande num corpo pequeno</h2>
+        <p class="secao__lead">O passado de caçador ainda aparece no comportamento. O Yorkie é carinhoso com a família, mas não se acha pequeno.</p>
+    </div>
+
+    <ul class="cartoes">
+        {% for traco in temperamento %}
+            <li class="cartao">
+                <h3>{{ traco.titulo }}</h3>
+                <p>{{ traco.texto }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

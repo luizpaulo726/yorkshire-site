@@ -1,0 +1,13 @@
+<header class="topo">
+    <div class="topo__interno">
+        <a href="#inicio" class="marca">
+            <span class="marca__selo" aria-hidden="true"></span>
+            Yorkshire Terrier
+        </a>
+        <nav class="menu" aria-label="Seções">
+            {% for item in menu %}
+                <a href="#{{ item.ancora }}">{{ item.rotulo }}</a>
+            {% endfor %}
+        </nav>
+    </div>
+</header>

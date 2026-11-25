@@ -1,0 +1,16 @@
+{% from '_macros.html.twig' import imagem %}
+<section class="capa" id="inicio">
+    <div class="capa__texto">
+        <p class="sobretitulo">Raça inglesa · século XIX</p>
+        <h1>Yorkshire <em>Terrier</em></h1>
+        <p class="capa__lead">Antes de ganhar laços de fita e colo, o Yorkie caçava ratos nas tecelagens do norte da Inglaterra. Esta é a história de como um terrier de operário virou um dos cães de companhia mais populares do mundo.</p>
+        <a href="#origem" class="botao">Conhecer a origem</a>
+    </div>
+    <figure class="capa__foto">
+        {{ imagem('capa-pelagem-longa', 'Yorkshire Terrier adulto de pelagem longa e sedosa, com laço vermelho no topete, deitado sobre um tecido rosa', {
+            tamanho: 1600,
+            sizes: '(max-width: 860px) 100vw, 55vw',
+            prioridade: true,
+        }) }}
+    </figure>
+</section>

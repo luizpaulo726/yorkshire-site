@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{% block titulo %}{{ site.titulo }}{% endblock %}</title>
+    <meta name="description" content="{{ site.descricao }}">
+    <meta property="og:title" content="Yorkshire Terrier">
+    <meta property="og:description" content="A origem, a aparência e os cuidados com o pequeno terrier inglês.">
+    <meta property="og:image" content="img/capa-pelagem-longa-1600.webp">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%233e5368%22/><circle cx=%2250%22 cy=%2250%22 r=%2224%22 fill=%22%23c4893f%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+{{ include('partes/_topo.html.twig') }}
+
+<main id="conteudo">
+    {% block conteudo %}{% endblock %}
+</main>
+
+{{ include('partes/_visualizador.html.twig') }}
+{{ include('partes/_rodape.html.twig') }}
+
+<script src="{{ asset('js/galeria.js') }}" defer></script>
+</body>
+</html>

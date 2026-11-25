@@ -1,0 +1,22 @@
+{
+    "name": "luizpaulo726/yorkshire-site",
+    "description": "Site sobre o Yorkshire Terrier gerado com Twig",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "twig/twig": "^3"
+    },
+    "scripts": {
+        "build": "@php build.php",
+        "serve": [
+            "@php build.php",
+            "Composer\\Config::disableProcessTimeout",
+            "@php -S 127.0.0.1:8000 -t dist"
+        ]
+    },
+    "scripts-descriptions": {
+        "build": "Gera o site estático em dist/",
+        "serve": "Gera o site e abre um servidor local em http://127.0.0.1:8000"
+    }
+}

@@ -1,0 +1,14 @@
+<section class="secao" id="curiosidades">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Curiosidades</p>
+        <h2>Você sabia?</h2>
+    </div>
+    <div class="curiosidades">
+        {% for curiosidade in curiosidades %}
+            <blockquote class="curiosidade">
+                <p class="curiosidade__numero">{{ curiosidade.numero }}</p>
+                <p>{{ curiosidade.texto }}</p>
+            </blockquote>
+        {% endfor %}
+    </div>
+</section>

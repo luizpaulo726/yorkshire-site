@@ -1,0 +1,31 @@
+<footer class="rodape">
+    <div class="faixa-pelagem" aria-hidden="true"></div>
+    <div class="rodape__interno">
+        <div>
+            <p class="rodape__marca">Yorkshire Terrier</p>
+            <p>Desenvolvido por <a href="{{ site.desenvolvedor_url }}">{{ site.desenvolvedor }}</a> · © {{ ano }}</p>
+        </div>
+
+        <details class="creditos">
+            <summary>Créditos das imagens</summary>
+            <ul>
+                {% for credito in creditos %}
+                    <li>
+                        {%- for obra in credito.obras -%}
+                            {{ not loop.first ? ' e ' }}<a href="{{ obra[1] }}">{{ obra[0] }}</a>
+                        {%- endfor -%}
+                        : {{ credito.autor }}
+                        {%- if credito.autor_url is defined %} (<a href="{{ credito.autor_url }}">{{ credito.autor_url|replace({'https://www.': ''}) }}</a>){% endif -%}
+                        ,
+                        {% if credito.licenca_url is defined -%}
+                            <a href="{{ credito.licenca_url }}">{{ credito.licenca }}</a>
+                        {%- else -%}
+                            {{ credito.licenca }}
+                        {%- endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <p>As imagens foram redimensionadas e convertidas para WebP.</p>
+        </details>
+    </div>
+</footer>

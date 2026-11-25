@@ -1,0 +1,20 @@
+{% from '_macros.html.twig' import imagem %}
+<section class="secao secao--alternada" id="galeria">
+    <div class="secao__cabecalho">
+        <p class="sobretitulo">Galeria</p>
+        <h2>Retratos de Yorkshires</h2>
+        <p class="secao__lead">Clique numa foto para ampliar.</p>
+    </div>
+
+    <ul class="galeria">
+        {% for foto in galeria %}
+            <li>
+                <button type="button" class="galeria__item"
+                        data-grande="img/{{ foto.imagem }}-1600.webp"
+                        data-legenda="{{ foto.legenda }}">
+                    {{ imagem(foto.imagem, foto.alt) }}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

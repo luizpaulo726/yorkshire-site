@@ -1,0 +1,8 @@
+<section class="ficha" aria-labelledby="titulo-ficha">
+    <h2 id="titulo-ficha" class="visualmente-oculto">Ficha da raça</h2>
+    <dl class="ficha__grade">
+        {% for item in ficha %}
+            <div><dt>{{ item.rotulo }}</dt><dd>{{ item.valor }}</dd></div>
+        {% endfor %}
+    </dl>
+</section>

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{#
+  Página única: cada seção fica num arquivo em secoes/.
+  Os dados (textos repetitivos, galeria, créditos) vêm de dados/conteudo.php.
+#}
+{% block conteudo %}
+    {{ include('secoes/_capa.html.twig') }}
+
+    {# Faixa com as duas cores da pelagem: azul-aço e castanho #}
+    <div class="faixa-pelagem" aria-hidden="true"></div>
+
+    {{ include('secoes/_ficha.html.twig') }}
+    {{ include('secoes/_origem.html.twig') }}
+    {{ include('secoes/_aparencia.html.twig') }}
+    {{ include('secoes/_temperamento.html.twig') }}
+    {{ include('secoes/_cuidados.html.twig') }}
+    {{ include('secoes/_curiosidades.html.twig') }}
+    {{ include('secoes/_galeria.html.twig') }}
+{% endblock %}

@@ -1,0 +1,23 @@
+{#
+  Imagem responsiva a partir do nome base em assets/img/
+  (ex.: "filhote" usa filhote-800.webp e filhote-1600.webp).
+
+  width e height são lidos do próprio arquivo pela função dimensoes(), definida no build.php.
+
+  opcoes:
+    sizes      → ativa o srcset com as duas versões (800 e 1600) e diz ao navegador o tamanho exibido
+    prioridade → true na imagem principal: carrega primeiro, sem lazy loading
+    tamanho    → versão usada no src (padrão: 800)
+#}
+{% macro imagem(nome, alt, opcoes = {}) -%}
+    {%- set principal = 'img/' ~ nome ~ '-' ~ (opcoes.tamanho ?? 800) ~ '.webp' -%}
+    {%- set d = dimensoes(principal) -%}
+    <img src="{{ principal }}"
+        {%- if opcoes.sizes is defined %}
+         srcset="{% for versao in [800, 1600] %}img/{{ nome }}-{{ versao }}.webp {{ dimensoes('img/' ~ nome ~ '-' ~ versao ~ '.webp').largura }}w{{ not loop.last ? ', ' }}{% endfor %}"
+         sizes="{{ opcoes.sizes }}"
+        {%- endif %}
+         alt="{{ alt }}"
+         width="{{ d.largura }}" height="{{ d.altura }}"
+        {%- if opcoes.prioridade ?? false %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+{%- endmacro %}
